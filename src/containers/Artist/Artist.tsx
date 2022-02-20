@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector, RootStateOrAny } from 'react-redux';
 import { startLoadingArtistById } from '../../redux/modules/artist';
-import {Container,ArtistCard,ArtistDetails} from './styles';
+import {Container,ArtistCard,ArtistDetails,Image} from './styles';
 
 export const Artist = ({ artistId }) => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export const Artist = ({ artistId }) => {
             {
                 activeArtist &&
                 <Container>
-                    <img src={activeArtist.image} width={250} height={250} alt="artist" />
+                    <Image src={activeArtist.image} width={250} height={250} alt="artist" />
                     <ArtistCard>
                         <h1>{activeArtist.name}</h1>
                         <ArtistDetails>    

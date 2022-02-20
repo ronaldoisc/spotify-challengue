@@ -2,18 +2,20 @@ import styled from 'styled-components';
 import *  as globalStyles from './../../globals/stylesGlobals';
 
 export const Container = styled.div`
-background-color:rgb(71,71,71);
+align-items:center;
+background-color:${props => props.theme.colors.grayLight};
 display:flex;
+justify-content:space-evenly;
 flex-direction:column;
+padding:1rem;
 
 @media ${globalStyles.device.tablet} {
     flex-direction:row;
   }
-padding:1rem;
-align-items:center;
-justify-content:space-evenly;
 `;
-
+export const Image=styled.img`
+border-radius:100%;
+`;
 
 export const ArtistCard = styled.div`
 display:flex;

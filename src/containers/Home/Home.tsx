@@ -6,6 +6,7 @@ import { Navbar } from '../../components/Navbar';
 import { startLoadingNewReleases } from '../../redux/modules/newReleases';
 import { Releases } from '../Releases/Releases';
 import { getCurrentTime } from '../../helper/getCurrentTime';
+import { Loader } from '../../components/Loader';
 
 
 const Time = styled.h1`
@@ -30,10 +31,10 @@ export const Home = () => {
     <>
       {
         isLoading ?
-          <h1>Cargando....</h1>
+         <Loader loading={isLoading}/>
           :
           <div>
-            <Navbar />
+            <Navbar title="spotify" />
             <Time>{time}!</Time>
             <Releases releases={releases} />
           </div>

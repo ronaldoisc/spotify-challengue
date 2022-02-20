@@ -1,50 +1,37 @@
-import React from 'react'
-import styled from 'styled-components';
 
-const Table = styled.table`
-width:80%;
-text-align:center;
-border-collapse: collapse;
-& tr{
-    height:90px;
-}
- & thead, tr {
-    border: 3px solid white;
-   
-    
-  }
-`;
-export const TableTracks = ({tracks}) => {
+import {Link} from 'react-router-dom';
+import { parseDuration } from '../../helper/parseDuration';
+import { Table } from './styles';
 
- 
+
+export const TableTracks = ({ tracks }) => {
+
     return (
         <Table>
             <thead>
                 <tr>
-                    <th>Artist</th>
-                    <th>Song</th>
-                    <th>Preview view</th>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Duration (m)</th>
+                    <th>Preview</th>
                 </tr>
             </thead>
             <tbody>
-               {
-                   tracks.map(track=>{
-                   return  <tr key={track.id}>
-                    <td>{track.artist.name}</td>
-                    <td>{track.uri}</td>
-                    <td>
-                   
-                    {/* <iframe src={track.uri} title={track.name}  >
-                         
-                         </iframe> */}
-                        {/* {track.previewUrl} */}
-                    <audio src={track.previewUrl}  controls></audio>
-                        
-                    </td>
-                    </tr>
-              
-                   })
-               }
+                {
+                    tracks.map((track, i) => {
+                        return <tr key={track.id}>
+                            <td>{i + 1}</td>
+                            <td>
+                                <Link to={`/track/${track.id}`}>{track.name}</Link>
+                            </td>
+                            <td>{parseDuration(track.duration)}</td>
+                            <td>
+                                <audio  src={track.previewUrl} controls ></audio>
+                            </td>
+                        </tr>
+
+                    })
+                }
             </tbody>
         </Table>
 

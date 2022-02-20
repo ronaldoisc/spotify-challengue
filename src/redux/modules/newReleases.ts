@@ -39,7 +39,7 @@ const loadNewReleases = (newReleases: Releases) => ({
 });
 
 //THUNK
-
+// function to load the new releases
 export const startLoadingNewReleases = () => {
     return async (dispatch: any) => {
         try {

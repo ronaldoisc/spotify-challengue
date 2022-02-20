@@ -10,43 +10,9 @@ justify-content:space-between;
 flex-wrap:wrap;
 `;
 
-export const Card = styled.div`
- background-color:rgb(23,23,23);
- margin:10px;
- 
- @media ${globalStyles.device.mobileS} {
-  width:100%;
-}
-@media ${globalStyles.device.mobileM} {
-  width:80%;
-}
-@media ${globalStyles.device.mobileL} {
-  width:45%;
-}
-@media ${globalStyles.device.tablet} {
-  width:30%;
-}
-@media ${globalStyles.device.laptop} {
-  width:20%;
-}
-@media ${globalStyles.device.desktop} {
-  width:15%;
-}
 
 
-
-& h3{
-   color:white;
-   text-align:center
-}
-&:hover{
-   cursor:pointer;
-    background-color:rgb(30,30,30);
-    transition:background-color 0.5s ease-out;
-}
-`;
-
-export const CardFooter = styled.p`
+export const CardFooter = styled.div`
 display:flex;
 justify-content:space-evenly;
 flex-flow:column wrap;
@@ -58,6 +24,10 @@ align-items:center;
 
 
 & span{
+    font-weight:bold;
+    color:black;
+    font-size:12px;
+
     @media ${globalStyles.device.mobileS} {
         width: 90%;
       }
@@ -71,11 +41,8 @@ align-items:center;
     
     margin:3px;
     padding:0.3rem;
-    font-size:11px;
-    background-color:rgb(30,215,96);
+    background-color:${props =>props.theme.colors.greenSpotify};
     border-radius:16px;
-    color:white;
-    text-align:center;
 }
 `;
 

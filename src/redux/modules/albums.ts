@@ -34,6 +34,8 @@ const loadArtistAlbums = (artistAlbums) => ({
     payload: artistAlbums
 });
 
+
+// Function to get the artist albums by artistId
 export const startLoadingArtistAlbums = (artistId) => {
     return async (dispatch) => {
 

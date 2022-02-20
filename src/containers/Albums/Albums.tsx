@@ -5,6 +5,7 @@ import { startLoadingArtistAlbums } from '../../redux/modules/albums';
 
 import { Artist } from '../Artist/Artist';
 import { AlbumList } from './AlbumList';
+import { Loader } from '../../components/Loader';
 import { Navbar } from '../../components/Navbar';
 
 export const Albums = () => {
@@ -24,12 +25,12 @@ export const Albums = () => {
     <>
       {
         isLoading ?
-          <h1>Cargando...</h1>
+          <Loader loading={isLoading}/>
           :
           <>
-            <Navbar/>
+            <Navbar title="spotify" />
             <Artist artistId={params.artistId} />
-            <h1>Albums</h1>
+            <h1 className='animate__animated animate__fadeInDown'>Albums</h1>
             <AlbumList list={list} />
           </>
       }

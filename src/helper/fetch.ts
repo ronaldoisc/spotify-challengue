@@ -10,7 +10,8 @@ export const customeFecthWithToken = (endpoint: any, data: any, method = 'GET') 
     if (method === 'GET') {
         return fetch(url, {
             headers: {
-                'Authorization': 'Bearer BQAsoeGSQtQWxcCDMZTvXy7VNNWQxjSsdZ8KCl7qirQP4-cGe48pi3FyfcD9gRUiDh_eO2BCYAKJ4h5yGzc'
+              
+                'Authorization': 'Bearer BQDddAZOsVwbYexQxLu7u3Dllo6Zw97HsxP6VIUIDaHHnUW64TQbu02Un1o_-i4egNZ2Q1KZalLIzyzKi1M'
             }
         });
     } else {

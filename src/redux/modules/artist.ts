@@ -30,12 +30,12 @@ export default function reducer(state=initialState,action:Artist){
 
 // ACTIONS CREATORS
 
-const setActiveArtist=(artist)=>({
+export const setActiveArtist=(artist)=>({
     type:types.loadArtistById,
     payload:artist
 });
 
-
+// function to get artist information by id
 export const startLoadingArtistById=(artistId)=>{
     return async(dispatch)=>{
 
