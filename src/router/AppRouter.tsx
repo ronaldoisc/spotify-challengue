@@ -12,15 +12,23 @@ import { Albums } from "../containers/Albums/Albums";
 import { Tracks } from "../containers/Tracks/Tracks";
 import { TrackDetails } from '../containers/Tracks/TrackDetails';
 import { useEffect } from 'react';
-import { useDispatch } from "react-redux";
-import { startCheckingToken } from '../redux/modules/ui';
+import { useDispatch, useSelector, RootStateOrAny } from 'react-redux';
+import { startCheckingToken } from "../redux/modules/newReleases";
+import { Loader } from "../components/Loader";
+
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
+  
+  const { checkingToken } = useSelector((state: RootStateOrAny) => state.newReleases);
 
   useEffect(() => {
     dispatch(startCheckingToken());
   }, [dispatch])
+
+  if(checkingToken){
+    return <Loader loading={checkingToken} />
+  }
 
 
   return (

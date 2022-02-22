@@ -25,4 +25,21 @@ describe('test in the ui module', () => {
 
 
      });
+
+     test('should return true', async () => {
+        const action={
+            type:types.startLoading,
+        }
+        const state=reducer(initialState,action);
+        expect(state).toEqual({ isLoading: true })
+
+      });
+
+      test('should return false', async () => { 
+        const action={
+            type:types.finishLoading,
+        }
+        const state=reducer(initialState,action);
+        expect(state).toEqual({ isLoading: false })
+       })
 })

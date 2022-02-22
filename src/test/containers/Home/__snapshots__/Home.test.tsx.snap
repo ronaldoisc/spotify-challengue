@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test in the container folder should show the Home component correctly 1`] = `
+<div>
+  <div>
+    <header
+      className="sc-bdvvtL dTRxGY"
+    >
+      <img
+        alt="logo"
+        height={40}
+        src="banner-ico.png"
+        width={40}
+      />
+      <h1
+        className="sc-gsDKAQ dtdhG"
+      >
+        spotify
+      </h1>
+    </header>
+  </div>
+  <h1
+    className="sc-iCfMLu dubHju"
+  >
+    Good Afternoon
+    !
+  </h1>
+  Array [
+    <h1
+      className="sc-jRQBWg gXLsvu animate__animated animate__fadeIn"
+    >
+      New Releases
+    </h1>,
+    <section
+      className="sc-hKwDye obivw"
+    />,
+  ]
+</div>
+`;

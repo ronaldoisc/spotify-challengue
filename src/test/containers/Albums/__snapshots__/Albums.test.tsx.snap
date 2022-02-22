@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test in the albums component should show the albums component 1`] = `
+Array [
+  <div>
+    <header
+      className="sc-furwcr iiWkgd"
+    >
+      <img
+        alt="logo"
+        height={40}
+        src="banner-ico.png"
+        width={40}
+      />
+      <h1
+        className="sc-pVTFL VYNMN"
+      >
+        spotify
+      </h1>
+    </header>
+  </div>,
+  <div
+    className="sc-gsDKAQ dLKkcs"
+  >
+    <img
+      alt="artist"
+      className="sc-dkPtRN vPKLc"
+      height={250}
+      width={250}
+    />
+    <div
+      className="sc-hKwDye foCxGe"
+    >
+      <h1 />
+      <div
+        className="sc-eCImPb lktEJb"
+      >
+        <p>
+          followers: 
+           
+          <i
+            className="material-icons md-light"
+          >
+            groups 
+          </i>
+             
+        </p>
+        <p>
+          popularity: 
+           
+          <i
+            className="material-icons md-light"
+          >
+             star_rate 
+          </i>
+           
+        </p>
+      </div>
+    </div>
+  </div>,
+  <h1
+    className="animate__animated animate__fadeInDown"
+  >
+    Albums
+  </h1>,
+  <section
+    className="sc-jRQBWg hFOFKN"
+  />,
+]
+`;

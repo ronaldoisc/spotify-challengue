@@ -1,7 +1,7 @@
 import { Title, Wrapper } from './styles';
 import { ReleaseCard } from './ReleaseCard';
 
-export const Releases = ({ releases }: any) => {
+export const Releases = ({ releases }) => {
 
     return (
         <>

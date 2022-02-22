@@ -10,8 +10,6 @@ export const Wrapper = styled.section`
    
 `;
 
-
-
 export const CardContent=styled.div`
 text-align:center;
 & h1{

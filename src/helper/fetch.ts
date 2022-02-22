@@ -9,8 +9,7 @@ export const customeFecthWithToken = (endpoint: string, data: object, method = '
   
     const url = `${baseUrl}/${endpoint}`;
     const token=localStorage.getItem('token') || '';
-      
-
+    
     if (method === 'GET') {
         return fetch(url, {
             headers: {

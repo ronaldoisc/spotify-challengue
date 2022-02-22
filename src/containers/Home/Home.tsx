@@ -15,7 +15,9 @@ color:white;
 `;
 
 export const Home = () => {
+  // call method to  print the current time por example good morgin or good afternoon
   const time = getCurrentTime();
+
   const dispatch = useDispatch();
 
   const { ui, newReleases } = useSelector((state: RootStateOrAny) => state);

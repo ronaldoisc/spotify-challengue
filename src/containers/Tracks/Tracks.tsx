@@ -15,8 +15,10 @@ overflow: auto;
 `;
 
 export const Tracks = () => {
+  // receive params
   let params = useParams();
   const dispatch = useDispatch();
+  // get data of the state
   const { ui, tracks } = useSelector((state: RootStateOrAny) => state);
   const { items } = tracks;
   const { isLoading } = ui;

@@ -7,7 +7,8 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
 const initialState = {
-  releases: []
+  releases: [],
+  checkingToken:true
 }
 Storage.prototype.setItem = jest.fn();
 
@@ -21,7 +22,8 @@ describe('test in the newreleases module', () => {
   test('the types should be equals', async () => {
 
     expect(types).toEqual({
-      LOAD: 'spotify/new-releases/LOAD'
+      LOAD: 'spotify/new-releases/LOAD',
+      checkingFinished: 'spotify-challengue/new-releases/checkingFinish'
     });
 
   });
@@ -58,6 +60,7 @@ describe('test in the newreleases module', () => {
 
     const state = reducer(initialState, action);
     expect(state).toEqual({
+      checkingToken: false,
       releases: [
         {
           id: '72r4dr0xDsXOWRwP2o7ZIP',
