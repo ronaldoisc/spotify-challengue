@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector, RootStateOrAny } from 'react-redux';
 import { startLoadingArtistAlbums } from '../../redux/modules/albums';
 
@@ -28,7 +28,7 @@ export const Albums = () => {
           <Loader loading={isLoading}/>
           :
           <>
-          <Outlet />
+         
             <Navbar title="spotify" />
             <Artist artistId={params.artistId} />
             <h1 className='animate__animated animate__fadeInDown'>Albums</h1>

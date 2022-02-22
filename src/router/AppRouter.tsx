@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
   // Navigate
 } from "react-router-dom";
 
@@ -19,14 +20,14 @@ import { Loader } from "../components/Loader";
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
-  
+
   const { checkingToken } = useSelector((state: RootStateOrAny) => state.newReleases);
 
   useEffect(() => {
     dispatch(startCheckingToken());
   }, [dispatch])
 
-  if(checkingToken){
+  if (checkingToken) {
     return <Loader loading={checkingToken} />
   }
 
@@ -35,12 +36,11 @@ export const AppRouter = () => {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Home />}> </Route>
+           <Route path="/" element={<Home />}/>
             <Route path="/albums/:artistId" element={<Albums />}></Route>
             <Route path="/album/:albumId/tracks" element={<Tracks />} />
             <Route path="/track/:trackId" element={<TrackDetails />} />
-
-          {/* <Route path="spotify/*" element={<Navigate to={"spotify"} replace />} /> */}
+            <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
       </div>
     </Router>
