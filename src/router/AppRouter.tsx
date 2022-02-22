@@ -40,7 +40,7 @@ export const AppRouter = () => {
           <Route path="/album/:albumId/tracks" element={<Tracks />} />
           <Route path="/track/:trackId" element={<TrackDetails />} />
 
-          <Route path="*" element={<Navigate to={"/spotify"} replace />} />
+          <Route path="/spotify/*" element={<Navigate to={"/spotify"} replace />} />
         </Routes>
       </div>
     </Router>
