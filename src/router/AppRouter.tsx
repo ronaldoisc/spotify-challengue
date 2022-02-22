@@ -35,12 +35,12 @@ export const AppRouter = () => {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/spotify" element={<Home />} />
           <Route path="/albums/:artistId" element={<Albums />} />
           <Route path="/album/:albumId/tracks" element={<Tracks />} />
           <Route path="/track/:trackId" element={<TrackDetails />} />
 
-          <Route path="/*" element={<Navigate to={"/"} replace />} />
+          <Route path="*" element={<Navigate to={"/spotify"} replace />} />
         </Routes>
       </div>
     </Router>
