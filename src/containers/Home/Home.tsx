@@ -7,6 +7,7 @@ import { startLoadingNewReleases } from '../../redux/modules/newReleases';
 import { Releases } from '../Releases/Releases';
 import { getCurrentTime } from '../../helper/getCurrentTime';
 import { Loader } from '../../components/Loader';
+import { Outlet } from 'react-router-dom';
 
 
 const Time = styled.h1`
@@ -36,6 +37,7 @@ export const Home = () => {
          <Loader loading={isLoading}/>
           :
           <div>
+            <Outlet />
             <Navbar title="spotify" />
             <Time>{time}!</Time>
             <Releases releases={releases} />
