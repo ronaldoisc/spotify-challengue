@@ -4,11 +4,11 @@ import { startLoading, finishLoading } from './ui';
 
 interface Album{
     type:string,
-    payload: Array<String>
+    payload: Array<object>
 }
 
 
-const types = {
+export const types = {
     loadArtistAlbums: 'spotify/albums/loadArtistAlbums'
 }
 const initialState = {
@@ -29,7 +29,7 @@ export default function reducer(state = initialState, action: Album) {
 
 
 // ACTIONS CREATORS
-const loadArtistAlbums = (artistAlbums) => ({
+export const loadArtistAlbums = (artistAlbums) => ({
     type: types.loadArtistAlbums,
     payload: artistAlbums
 });

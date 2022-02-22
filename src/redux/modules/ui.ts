@@ -1,3 +1,4 @@
+import { customeFetchWithOutToken } from '../../helper/fetch';
 interface UI{
     type:string
 }
@@ -42,3 +43,14 @@ export const finishLoading=()=>({
     type:types.finishLoading
 
 });
+
+
+export const startCheckingToken=()=>{
+    return async()=>{
+      const resp=await customeFetchWithOutToken('token/renew',{},'GET');
+      const body=await resp.json();
+      console.log(body);
+      localStorage.setItem('token',body.token);
+     
+    }
+}

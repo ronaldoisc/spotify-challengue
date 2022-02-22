@@ -1,12 +1,13 @@
 import { customeFecthWithToken } from "../../helper/fetch";
 import { prepareReleases } from "../../helper/prepareReleases";
-import { startLoading, finishLoading } from './ui';
-interface Releases {
+import { startLoading, finishLoading, startCheckingToken } from './ui';
+interface IReleaseReducer {
     type: string,
-    payload: Array<String>
+    payload: any
 }
+
 //ACTIONS
-const types = {
+export const types = {
     LOAD: 'spotify/new-releases/LOAD'
 }
 
@@ -16,7 +17,7 @@ const initialState = {
 
 
 //REDUCER
-export default function reducer(state = initialState, action: Releases) {
+export default function reducer(state = initialState, action: IReleaseReducer) {
     switch (action.type) {
         case types.LOAD:
             return {
@@ -32,7 +33,7 @@ export default function reducer(state = initialState, action: Releases) {
 
 //ACTIONS CREATORS
 
-const loadNewReleases = (newReleases: Releases) => ({
+export const loadNewReleases = (newReleases:Array<object>) => ({
     type: types.LOAD,
     payload: newReleases
 
@@ -43,14 +44,17 @@ const loadNewReleases = (newReleases: Releases) => ({
 export const startLoadingNewReleases = () => {
     return async (dispatch: any) => {
         try {
+            dispatch(startCheckingToken());
             dispatch(startLoading());
             const resp = await customeFecthWithToken('browse/new-releases', {}, 'GET')
             const body = await resp.json();
+           
+            
             const releases = prepareReleases(body.albums.items);
             dispatch(loadNewReleases(releases));
             dispatch(finishLoading());
-
         } catch (error) {
+           
             dispatch(finishLoading());
         }
     }
