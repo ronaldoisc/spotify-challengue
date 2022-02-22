@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  // Navigate,
   // Navigate
 } from "react-router-dom";
 
@@ -37,10 +37,10 @@ export const AppRouter = () => {
       <div>
         <Routes>
            <Route path="/" element={<Home />}/>
-            <Route path="/albums/:artistId" element={<Albums />}></Route>
-            <Route path="/album/:albumId/tracks" element={<Tracks />} />
-            <Route path="/track/:trackId" element={<TrackDetails />} />
-            <Route path="*" element={<Navigate to={"/"} replace />} />
+            <Route path="albums/:artistId" element={<Albums />}></Route>
+            {/* <Route path="/album/:albumId/tracks" element={<Tracks />} /> */}
+            {/* <Route path="/track/:trackId" element={<TrackDetails />} /> */}
+            {/* <Route path="*" element={<Navigate to={"/"} replace />} /> */}
         </Routes>
       </div>
     </Router>
