@@ -1,12 +1,12 @@
 import { Wrapper, CardContent, Image } from './styles';
-// import { Outlet, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { Card } from '../../globals/stylesGlobals';
 export const AlbumList = ({list}) => {
   
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   //  Function to navigate at track page
   const handleClickCard=(albumId)=>{
-    // navigate(`/albums/${albumId}/tracks`)
+    navigate(`/album/${albumId}/tracks`)
   }
    
   return (

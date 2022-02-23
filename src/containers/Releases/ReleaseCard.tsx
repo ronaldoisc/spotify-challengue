@@ -7,8 +7,8 @@ export const ReleaseCard = ({ release }) => {
 
     let navigate = useNavigate();
     const handleClick = (id) => {
-        // navigate(`/releases/${id}`);
-        navigate(`/test`);
+        navigate(`/albums/${id}`);
+        // navigate(`/test`);
     }
 
     return (
