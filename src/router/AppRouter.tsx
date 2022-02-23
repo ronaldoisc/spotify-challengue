@@ -4,8 +4,6 @@ import {
   Routes,
   Route,
   Navigate,
-  // Navigate,
-  // Navigate
 } from "react-router-dom";
 
 
@@ -17,7 +15,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector, RootStateOrAny } from 'react-redux';
 import { startCheckingToken } from "../redux/modules/newReleases";
 import { Loader } from "../components/Loader";
-// import { Albums } from "../containers/Albums/Albums";
 
 
 export const AppRouter = () => {
@@ -38,11 +35,11 @@ export const AppRouter = () => {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/albums/:artistId" element={<Albums />} />
-          <Route path="/album/:albumId/tracks" element={<Tracks />} />
-          <Route path="/track/:trackId" element={<TrackDetails />} />
-          <Route path="/*" element={<Navigate to={"/"} replace />} />
+          <Route  exact path="/" element={<Home />} />
+          <Route  exact path="/albums/:artistId" element={<Albums />} />
+          <Route  exact path="/album/:albumId/tracks" element={<Tracks />} />
+          <Route  exact path="/track/:trackId" element={<TrackDetails />} />
+          <Route  exact path="/*" element={<Navigate to={"/"} replace />} />
         </Routes>
       </div>
     </Router>
