@@ -6,7 +6,10 @@ import { Card } from '../../globals/stylesGlobals';
 export const ReleaseCard = ({ release }) => {
 
     let navigate = useNavigate();
-    const handleClick = (id) => navigate(`/albums/${id}`);
+    const handleClick = (id) => {
+        // navigate(`/releases/${id}`);
+        navigate(`/test`);
+    }
 
     return (
         <Card key={release.id} onClick={() => handleClick(release.artists[0].id)}>

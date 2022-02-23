@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
   // Navigate,
   // Navigate
 } from "react-router-dom";
@@ -16,8 +17,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector, RootStateOrAny } from 'react-redux';
 import { startCheckingToken } from "../redux/modules/newReleases";
 import { Loader } from "../components/Loader";
-import { DashboardRoutes } from "./DashboardRoutes";
-import { Albums } from "../containers/Albums/Albums";
+// import { Albums } from "../containers/Albums/Albums";
 
 
 export const AppRouter = () => {
@@ -39,12 +39,13 @@ export const AppRouter = () => {
       <div>
         <Routes>
             <Route path="/" element={<Home />}/>
+             <Route path="/test" element={<h1>prueba</h1>}/>
+              {/* <Route path="/releases/:artistId" element={<Albums />}/> */}
               {/* <Route path="albums/*" element={<DashboardRoutes />}/> */}
            
-            <Route path="/albums/:artistId" element={<Albums />}/>
             {/* <Route path="/album/:albumId/tracks" element={<Tracks />} /> */}
             {/* <Route path="/track/:trackId" element={<TrackDetails />} /> */}
-            {/* <Route path="*" element={<Navigate to={"/"} replace />} /> */}
+            <Route path="/*" element={<Navigate to={"/"} replace />} />
         </Routes>
       </div>
     </Router>
