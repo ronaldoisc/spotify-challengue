@@ -36,13 +36,6 @@ export const AppRouter = () => {
           <Route path="/*" element={
             <DashboardRoutes/>
           }/>
-
-         
-          {/* <Route  path="/" element={<Home />} />
-          <Route path="/albums/:artistId" element={<Albums />} />
-          <Route path="/album/:albumId/tracks" element={<Tracks />} />
-          <Route path="/track/:trackId" element={<TrackDetails />} />
-          <Route path="/*" element={<Navigate to={"/"} replace />} /> */}
         </Routes>
       </div>
     </Router>
