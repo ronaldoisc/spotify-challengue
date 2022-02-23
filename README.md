@@ -14,5 +14,5 @@ to run the app execute:
 
 ## note
 
-if you want you can se the app deployed in heroku server in the follow link
+if you want to see the app deployed in heroku server in the follow link
 https://spotify-challengue-ronaldo.herokuapp.com/

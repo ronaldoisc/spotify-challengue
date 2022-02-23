@@ -68,6 +68,7 @@ export const startCheckingToken = () => {
         if (existToken === '' || existToken !=='') {
             const resp = await customeFetchWithOutToken('token/renew', {}, 'GET');
             const body = await resp.json();
+           
             localStorage.setItem('token', body.token);
             dispatch(startLoadingNewReleases())
 
