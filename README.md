@@ -16,3 +16,8 @@ to run the app execute:
 
 if you want to see the app deployed in heroku server in the follow link
 https://spotify-challengue-ronaldo.herokuapp.com/
+
+
+## note
+
+The app will work all the time because I created a API in node js to refresh the spotify token.
